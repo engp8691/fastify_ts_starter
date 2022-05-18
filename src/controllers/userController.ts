@@ -3,9 +3,10 @@ import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 export default async function userController(fastify: FastifyInstance) {
   // GET /api/v1/user
   fastify.get("/", async function (
-    _request: FastifyRequest,
+    request: FastifyRequest,
     reply: FastifyReply
   ) {
+    console.log(request.user)
     reply.send({
       balance: "$3,277.32",
       picture: "http://placehold.it/32x32",
